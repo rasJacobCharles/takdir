@@ -1,0 +1,29 @@
+[workspace]
+resolver = "2"
+members = [
+    "libs/takdir-core",
+    "bins/takdir-api",
+    "bins/takdir-admin",
+]
+
+[workspace.dependencies]
+tokio = { version = "1.38", features = ["full"] }
+tokio-postgres = { version = "0.7.10", features = ["with-uuid-1", "with-chrono-0_4"] }
+deadpool-postgres = { version = "0.12.1" }
+redis = { version = "0.24.1", features = ["tokio-comp", "aio", "connection-manager"] }
+deadpool-redis = { version = "0.14.0" }
+apalis = { version = "0.4.7" }
+apalis-redis = { version = "0.4.7" }
+axum = { version = "0.7.5", features = ["macros"] }
+serde = { version = "1.0.203", features = ["derive"] }
+serde_json = { version = "1.0.117" }
+jsonwebtoken = { version = "9.3.0" }
+argon2 = { version = "0.5.3" }
+refinery = { version = "0.8.14", features = ["tokio-postgres"] }
+clap = { version = "4.5.7", features = ["derive"] }
+uuid = { version = "1.8.0", features = ["v4", "serde"] }
+chrono = { version = "0.4.38", features = ["serde"] }
+dotenvy = { version = "0.15.7" }
+thiserror = { version = "1.0.61" }
+anyhow = { version = "1.0.86" }
+takdir-core = { path = "libs/takdir-core" }
